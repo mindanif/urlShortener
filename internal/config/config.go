@@ -1,6 +1,7 @@
 package config
 
 import (
+	"fmt"
 	"github.com/ilyakaznacheev/cleanenv"
 	"log"
 	"os"
@@ -21,6 +22,7 @@ type HTTPServer struct {
 
 func MustLoad() *Config {
 	configPath := os.Getenv("CONFIG_PATH")
+	fmt.Println(configPath)
 	if configPath == "" {
 		log.Fatal("CONFIG PATH is not set")
 	}
